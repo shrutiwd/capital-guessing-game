@@ -7,7 +7,7 @@ Welcome to the Capital Guessing Game! This simple web application tests your kno
 ### 1. Clone this repository to your local machine using 'git clone'.
 
 ```
-git clone https://github.com/your-username/capital-guessing-game.git
+git clone https://github.com/shrutiwd/capital-guessing-game.git
 cd capital-guessing-game
 ```
 
