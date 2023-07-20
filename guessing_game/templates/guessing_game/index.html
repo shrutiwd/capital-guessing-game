@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capital Guessing Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 7px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        span {
+            color: #d62976  ;
+            text-transform: uppercase;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Guess the Capital City!</h1>
+    <p>Guess the capital city of <b><span>{{ random_country.name }}</span></b> </p>
+    <input type="text" id="guessInput">
+    <button onclick="checkAnswer()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            const guess = document.getElementById("guessInput").value;
+            const correctAnswer = "{{ random_country.capital }}";
+            const resultParagraph = document.getElementById("result");
+
+            if (guess.toLowerCase() === correctAnswer.toLowerCase()) {
+                resultParagraph.textContent = "Correct! The capital is " + correctAnswer;
+            } else {
+                resultParagraph.textContent = "Incorrect. The correct answer is " + correctAnswer;
+            }
+        }
+    </script>
+</body>
+</html>
